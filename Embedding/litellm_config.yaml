@@ -1,0 +1,8 @@
+model_list:
+  - model_name: mxbai-embed
+    litellm_params:
+      model: llamafile/mxbai-embed-large-v1
+      api_base: http://localhost:8080/v1
+
+general:
+  master_key: sk-1234567890

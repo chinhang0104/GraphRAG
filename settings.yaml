@@ -1,0 +1,50 @@
+completion_models:
+  default_completion_model:
+    type: litellm
+    model_provider: groq
+    model: llama-3.3-70b-versatile
+    auth_method: api_key
+    api_key: ${GROQ_API_KEY}
+
+embedding_models:
+  default_embedding_model:
+    type: litellm
+    model_provider: llamafile
+    model: mxbai-embed
+    auth_method: api_key
+    api_key: sk-1234567890
+    api_base: http://localhost:4000/v1
+
+embed_text:
+  embedding_model_id: default_embedding_model
+  model_instance_name: text_embedding
+  batch_size: 16
+  batch_max_tokens: 8191
+  names:
+    - text_unit_text
+    - entity_description
+    - community_full_content
+
+extract_graph:
+  completion_model_id: default_completion_model
+  model_instance_name: extract_graph
+  prompt: prompts/extract_graph.txt
+  entity_types:
+    - organization
+    - person
+    - geo
+    - event
+  max_gleanings: 1
+
+community_reports:
+  completion_model_id: default_completion_model
+  model_instance_name: community_reporting
+  graph_prompt: prompts/community_report_graph.txt
+  text_prompt: prompts/community_report_text.txt
+  max_length: 2000
+  max_input_length: 8000
+
+chunks:
+  size: 300       # The maximum number of tokens per chunk
+  overlap: 100    # The number of overlapping tokens between consecutive chunks
+  group_by_columns: [id] # Prevents chunks from crossing document boundaries

@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs, inputs and outputs
+logs/
+input/
+output/
+
+# Caches and embeddings
+cache/
+Embedding/*.db
+Embedding/*.sqlite
+Embedding/*.bin
+
+# lancedb
+lancedb/
+
+# System
+*.log
+.DS_Store
+Thumbs.db
+
+# Local secrets / env
+.env
+secrets.json
+
+# Reference files
+**/reference/
+
+# Executables
+*.exe

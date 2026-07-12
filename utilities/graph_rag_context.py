@@ -53,6 +53,12 @@ def graphrag_retriever(query: str, **build_context_kwargs: Any) -> list[str]:
     community_level = build_context_kwargs.pop("community_level", 2)
     embedding_config = build_context_kwargs.pop("embedding_config", None)
 
+    build_context_kwargs.setdefault("max_context_tokens", 4000)
+    build_context_kwargs.setdefault("top_k_mapped_entities", 1)
+    build_context_kwargs.setdefault("top_k_relationships", 1)
+    build_context_kwargs.setdefault("use_community_summary", True)
+    build_context_kwargs.setdefault("min_community_rank", 1)
+
     output_dir = str(output_dir)
 
     entity_df = pd.read_parquet(f"{output_dir}/entities.parquet")

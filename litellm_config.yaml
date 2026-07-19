@@ -3,6 +3,10 @@ model_list:
     litellm_params:
       model: llamafile/mxbai-embed-large-v1
       api_base: http://localhost:8080/v1
+  - model_name: Llama-3.2-3B-Instruct-Q4_K_M
+    litellm_params:
+      model: llamafile/Llama-3.2-3B-Instruct-Q4_K_M
+      api_base: http://localhost:8081/v1
 
 general:
   master_key: sk-1234567890

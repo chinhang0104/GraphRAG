@@ -20,6 +20,9 @@ logs/
 input/
 output/
 
+# Models
+models/
+
 # Caches and embeddings
 cache/
 Embedding/*.db
